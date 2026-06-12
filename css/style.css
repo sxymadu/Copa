@@ -1,0 +1,198 @@
+@font-face {
+    font-family: "zombie";
+    src: url("../fontes/Zombie\ Zone.ttf") format(truetype);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f4f4;
+    color:#222;
+}
+
+/* BANNER */
+
+.banner{
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+}
+
+.banner-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.overlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+}
+.logo{
+    position:absolute;
+    top:20px;
+    left:25px;
+    width: 150px;
+    z-index:10;
+}
+
+nav{
+    position:absolute;
+    top:35px;
+    right:40px;
+    z-index:10;
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:1rem;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ffdf00;
+}
+
+.banner-texto{
+    position:absolute;
+    left:8%;
+    bottom:15%;
+    color:white;
+    z-index:10;
+    font-family: "zombie", serif;
+}
+
+.banner-texto h1{
+    font-size:5rem;
+    text-shadow:2px 2px 10px rgba(0,0,0,.6);
+}
+
+.banner-texto p{
+    font-size:1.5rem;
+    color:#ffdf00;
+    margin-top:10px;
+}
+
+/* SEÇÕES */
+
+section{
+    padding:80px 10%;
+}
+
+section h2{
+    text-align:center;
+    color:#002776;
+    margin-bottom:35px;
+    font-size:2.5rem;
+}
+
+/* TABELA */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    box-shadow:0 0 15px rgba(0,0,0,.1);
+}
+
+th{
+    background:#002776;
+    color:white;
+    padding:15px;
+}
+
+td{
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#f1f1f1;
+}
+
+/* CARDS */
+
+.cards{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+}
+
+.card{
+    background:white;
+    width:280px;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,.1);
+    border-top:5px solid #009c3b;
+}
+
+.card h3{
+    color:#002776;
+    margin-bottom:10px;
+}
+
+/* APOIO */
+
+#apoio{
+    background:#002776;
+    color:white;
+    text-align:center;
+}
+
+#apoio h2{
+    color:#ffdf00;
+}
+
+#apoio p{
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+
+/* RODAPÉ */
+
+footer{
+    background:#001a4d;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+    .banner-texto h1{
+        font-size:3rem;
+    }
+
+    .logo{
+        width:65px;
+    }
+
+    nav{
+        gap:15px;
+        right:15px;
+    }
+
+    nav a{
+        font-size:.85rem;
+    }
+}
