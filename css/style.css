@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "zombie";
-    src: url("../fontes/Zombie\ Zone.ttf") format(truetype);
+    font-family: "italic";
+    src: url("../fontes/Weghorst-Italic\ \(\ Personal\ Used\ \).otf") format("opentype");
 }
 
 *{
@@ -15,8 +15,8 @@ html{
 
 body{
     font-family:Arial, Helvetica, sans-serif;
-    background:#f4f4f4;
-    color:#222;
+    background:#0A1931;
+    color:#f5f5f5;
 }
 
 /* BANNER */
@@ -31,18 +31,20 @@ body{
     width:100%;
     height:100%;
     object-fit:cover;
+    filter:brightness(60%);
 }
 
 .overlay{
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.65);
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
 }
+
 .logo{
     position:absolute;
     top:20px;
     left:25px;
-    width: 150px;
+    width:150px;
     z-index:10;
 }
 
@@ -60,11 +62,13 @@ nav a{
     text-decoration:none;
     font-weight:bold;
     font-size:1rem;
+    letter-spacing:1px;
     transition:.3s;
 }
 
 nav a:hover{
-    color:#ffdf00;
+    color:#FFD700;
+    text-shadow:0 0 10px rgba(255,215,0,.8);
 }
 
 .banner-texto{
@@ -73,18 +77,22 @@ nav a:hover{
     bottom:15%;
     color:white;
     z-index:10;
-    font-family: "zombie", serif;
+    font-family:"italic", serif;
 }
 
 .banner-texto h1{
     font-size:5rem;
-    text-shadow:2px 2px 10px rgba(0,0,0,.6);
+    letter-spacing:4px;
+    text-shadow:
+        0 0 10px rgba(0,0,0,.8),
+        0 0 20px rgba(0,0,0,.8);
 }
 
 .banner-texto p{
     font-size:1.5rem;
-    color:#ffdf00;
-    margin-top:10px;
+    color:#FFD700;
+    margin-top:20px;
+    font-family:"italic", serif;
 }
 
 /* SEÇÕES */
@@ -95,9 +103,11 @@ section{
 
 section h2{
     text-align:center;
-    color:#002776;
+    color:#FFD700;
     margin-bottom:35px;
     font-size:2.5rem;
+    text-transform:uppercase;
+    letter-spacing:2px;
 }
 
 /* TABELA */
@@ -105,24 +115,28 @@ section h2{
 table{
     width:100%;
     border-collapse:collapse;
-    background:white;
-    box-shadow:0 0 15px rgba(0,0,0,.1);
+    background:#161b22;
+    color:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 0 25px rgba(0,0,0,.4);
 }
 
 th{
-    background:#002776;
-    color:white;
+    background:#FFD700;
+    color:#000;
     padding:15px;
+    font-weight:bold;
 }
 
 td{
     padding:15px;
     text-align:center;
-    border-bottom:1px solid #ddd;
+    border-bottom:1px solid #30363d;
 }
 
 tr:hover{
-    background:#f1f1f1;
+    background:#21262d;
 }
 
 /* CARDS */
@@ -135,44 +149,118 @@ tr:hover{
 }
 
 .card{
-    background:white;
+    background:#161b22;
     width:280px;
     padding:25px;
-    border-radius:15px;
-    box-shadow:0 0 15px rgba(0,0,0,.1);
-    border-top:5px solid #009c3b;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+    border-top:4px solid #FFD700;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
 }
 
 .card h3{
-    color:#002776;
+    color:#FFD700;
     margin-bottom:10px;
+}
+
+.card p{
+    color:#d1d5db;
 }
 
 /* APOIO */
 
 #apoio{
-    background:#002776;
+    background:#000;
     color:white;
     text-align:center;
 }
 
 #apoio h2{
-    color:#ffdf00;
+    color:#FFD700;
+    font-family:"italic", serif;
 }
 
 #apoio p{
     max-width:700px;
     margin:auto;
     line-height:1.8;
+    font-family:"italic", serif;
+    font-size:1.4rem;
+}
+
+/* CAIXA DA TORCIDA */
+
+.mensagem-torcida{
+    max-width:700px;
+    margin:50px auto 0;
+    background:#0A1931;
+    padding:35px;
+    border-radius:20px;
+    border:2px solid #FFD700;
+    box-shadow:0 0 25px rgba(255,215,0,.15);
+}
+
+.mensagem-torcida h3{
+    color:#FFD700;
+    margin-bottom:20px;
+    font-family:"italic", serif;
+    font-size:1.8rem;
+}
+
+.mensagem-torcida textarea{
+    width:100%;
+    height:150px;
+    resize:none;
+    border:none;
+    border-radius:12px;
+    padding:15px;
+    font-size:1rem;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#161b22;
+    color:white;
+    outline:none;
+    margin-bottom:20px;
+    transition:.3s;
+}
+
+.mensagem-torcida textarea:focus{
+    box-shadow:0 0 15px rgba(255,215,0,.4);
+}
+
+.mensagem-torcida textarea::placeholder{
+    color:#bdbdbd;
+}
+
+.mensagem-torcida button{
+    background:#FFD700;
+    color:#000;
+    border:none;
+    padding:14px 30px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:1rem;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.mensagem-torcida button:hover{
+    background:white;
+    transform:translateY(-3px);
+    box-shadow:0 5px 15px rgba(255,215,0,.3);
 }
 
 /* RODAPÉ */
 
 footer{
-    background:#001a4d;
-    color:white;
+    background:#000;
+    color:#FFD700;
     text-align:center;
     padding:25px;
+    border-top:2px solid #FFD700;
 }
 
 /* RESPONSIVO */
@@ -181,6 +269,10 @@ footer{
 
     .banner-texto h1{
         font-size:3rem;
+    }
+
+    .banner-texto p{
+        font-size:1.1rem;
     }
 
     .logo{
@@ -194,5 +286,21 @@ footer{
 
     nav a{
         font-size:.85rem;
+    }
+
+    section{
+        padding:60px 5%;
+    }
+
+    section h2{
+        font-size:2rem;
+    }
+
+    .mensagem-torcida{
+        padding:25px;
+    }
+
+    .mensagem-torcida h3{
+        font-size:1.4rem;
     }
 }
